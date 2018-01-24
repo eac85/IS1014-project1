@@ -1,15 +1,15 @@
 
 <html>
 <!DOCTYPE html>
-Your assignment 1 minimal WebGL example to save, modify and
+<!--Your assignment 1 minimal WebGL example to save, modify and
 test on your own web page and/or system.
 <BR>Please send me the web link to your example by next week.
 <BR>This is graded Y/N only and is primarily intended to finally get us on track for later programs.
-<BR>
+<BR> -->
 <HR>
 <head>
 	<meta charset="utf-8" />
-	<title>Example</title>
+	<title>Emery's first WebGL</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -59,27 +59,29 @@ function draw() {
 	var prog = shaderProgram(gl,
 		"attribute vec3 pos;"+
 		"void main() {"+
-		"	gl_Position = vec4(pos, 2.0);"+
+		"	gl_Position = vec4(pos, 1.0);"+
 		"}",
 		"void main() {"+
-		"	gl_FragColor = vec4(0.5, 0.5, 1.0, 1.0);"+
+		"	gl_FragColor = vec4(0.9, 0.8, 1.0, 1.0);"+
 		"}"
 	);
 	gl.useProgram(prog);
 
 	attributeSetFloats(gl, prog, "pos", 3, [
-		-1, 0, 0,
-		0, 1, 0,
-		0, -1, 0,
+		-2, 2, 9,
+		-3, 1, 0,
+		-2, -1, 0,
 		1, 0, 0
 	]);
 	
 	gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 }
 
+
 function init() {
 	try {
-		draw();
+			draw();
+		
 	} catch (e) {
 		alert("Error: "+e);
 	}
