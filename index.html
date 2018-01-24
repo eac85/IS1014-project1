@@ -59,7 +59,7 @@ function draw() {
 	var prog = shaderProgram(gl,
 		"attribute vec3 pos;"+
 		"void main() {"+
-		"	gl_Position = vec4(pos, 1.0);"+
+		"	gl_Position = vec4(pos, 2.0);"+
 		"}",
 		"void main() {"+
 		"	gl_FragColor = vec4(255, 0, 255, 1.0);"+
@@ -68,13 +68,15 @@ function draw() {
 	gl.useProgram(prog);
 
 	attributeSetFloats(gl, prog, "pos", 3, [
-		-2, 2, 9,
-		-3, 1, 0,
-		-2, -1, 0,
-		1, 0, 0
+		-1, 0, 0,
+		0, 1, 0,
+		0, -1, 0,
+		1, 0, 0,
+		1, -1, 0,
+		-1, -1, 0
 	]);
 	
-	gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+	gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
 }
 
 
